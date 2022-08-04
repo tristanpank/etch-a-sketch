@@ -1,0 +1,22 @@
+#grid-container {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 600px;
+    /* height: 1000px; */
+}
+
+.row {
+    display: flex;
+    flex: auto;
+    /* min-height: 20px; */
+}
+
+.square {
+    /* display: flex; */
+    flex: auto;
+    /* min-height: 20px;
+    min-width: 20px; */
+    background-color: black;
+    border: 1px solid white;
+}
