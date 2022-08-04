@@ -8,7 +8,7 @@ function main() {
 }
 
 function changeBackground() {
-    this.style.cssText = 'background-color: white';
+    this.style.cssText = 'background-color: black';
 }
 
 function changeGrid() {
