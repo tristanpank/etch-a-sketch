@@ -5,6 +5,8 @@ function main() {
     addFunctionality();
     const gridChanger = document.getElementById('grid-changer');
     gridChanger.addEventListener('click', changeGrid);
+    const clear = document.getElementById('clear-button');
+    clear.addEventListener('click', resetGrid);
 }
 
 function changeBackground() {
@@ -12,10 +14,17 @@ function changeBackground() {
 }
 
 function changeGrid() {
-    let gridNumber = prompt();
+    do {
+        currGridNumber = prompt();
+    }
+    while (currGridNumber>100 || currGridNumber<1);
+    resetGrid();
+}
+
+function resetGrid() {
     const rows = document.getElementsByClassName('row');
     Array.from(rows).forEach(element => element.remove());
-    createDivs(gridNumber);
+    createDivs(currGridNumber);
     addFunctionality();
 }
 
