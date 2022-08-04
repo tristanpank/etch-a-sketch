@@ -1,14 +1,29 @@
+let currGridNumber = 16;
+
 function main() {
     createDivs(16);
-    const squares = document.getElementsByClassName('square');
-    Array.from(squares).forEach(element => element.addEventListener('mouseover', changeBackground));
-    Array.from(squares).forEach(element => element.addEventListener('touchstart', changeBackground));
+    addFunctionality();
+    const gridChanger = document.getElementById('grid-changer');
+    gridChanger.addEventListener('click', changeGrid);
 }
 
 function changeBackground() {
     this.style.cssText = 'background-color: white';
 }
 
+function changeGrid() {
+    let gridNumber = prompt();
+    const rows = document.getElementsByClassName('row');
+    Array.from(rows).forEach(element => element.remove());
+    createDivs(gridNumber);
+    addFunctionality();
+}
+
+function addFunctionality() {
+    const squares = document.getElementsByClassName('square');
+    Array.from(squares).forEach(element => element.addEventListener('mouseover', changeBackground));
+    Array.from(squares).forEach(element => element.addEventListener('touchstart', changeBackground));
+}
 
 function createDivs(rowNums) {
     let container = document.getElementById('grid-container');
